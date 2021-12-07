@@ -1,5 +1,26 @@
 # Collisions
 
+p5.collide2D provides tools for calculating collision detection for 2D geometry with p5.js. Rather than writing functions for all types of situations, we can use the building in functions found in [this library](https://github.com/bmoren/p5.collide2D).
+
+For example, to check if two circles are touching and chagnge them red if they are, we can do the following:
+
+```javascript
+var hit = false;
+
+function draw() {
+  background(255);
+  circle(200, 200, 100);
+  circle(mouseX, mouseY, 150);
+
+  hit = collideCircleCircle(mouseX, mouseY, 150, 200, 200, 100);
+	if(hit){
+		fill("red")
+	} 
+	else {
+		fill("white")
+	}
+}
+```
 
 
 ## Tasks
